@@ -52,21 +52,24 @@ header {
     text-decoration: none;
 }
 
+/* Perbaikan area logo agar pas dan tidak bulat terpotong */
 .logo-icon {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     background: var(--cream);
-    border-radius: 50%;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 2px solid var(--champagne);
+    overflow: hidden;
+    padding: 2px;
 }
 
-.logo-icon svg {
-    width: 24px;
-    height: 24px;
-    fill: var(--burgundy-deep);
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Agar gambar logo tampil utuh tidak terpotong */
 }
 
 .logo-text h1 {
@@ -674,4 +677,4 @@ footer p {
     .menu-toggle {
         display: block;
     }
-                     }
+    }
