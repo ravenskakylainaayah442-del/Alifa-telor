@@ -91,7 +91,6 @@ header {
     align-items: center;
 }
 
-/* Teks menu selalu putih (tidak biru/ungu) */
 #navMenu a.nav-link,
 #navMenu a.nav-link:visited {
     color: #ffffff;
@@ -104,7 +103,6 @@ header {
     color: var(--champagne);
 }
 
-/* Tombol Konsultasi tetap burgundy di atas champagne */
 #navMenu a.cta-header,
 #navMenu a.cta-header:visited {
     color: var(--burgundy-deep);
@@ -117,12 +115,13 @@ header {
     padding: 0.5rem 1.25rem;
     border-radius: 4px;
     font-weight: 600;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s, transform 0.2s;
     text-decoration: none;
 }
 
 .cta-header:hover {
-    opacity: 0.9;
+    opacity: 0.92;
+    transform: translateY(-1px);
 }
 
 .hero-cta {
@@ -449,9 +448,20 @@ section {
     align-items: center;
     gap: 12px;
     font-size: 0.95rem;
+    flex-wrap: wrap;
 }
 
 .info-item strong {
+    color: var(--champagne);
+}
+
+.wa-text-link {
+    color: var(--cream);
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.wa-text-link:hover {
     color: var(--champagne);
 }
 
@@ -496,10 +506,15 @@ textarea.form-control {
     min-height: 120px;
 }
 
-.btn-submit {
-    background-color: var(--champagne);
-    color: var(--burgundy-deep);
-    border: none;
+/* Styling Grup Tombol Aksi (WhatsApp, TikTok, Instagram) */
+.action-buttons-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.btn-action {
     width: 100%;
     padding: 1rem;
     font-weight: 700;
@@ -507,11 +522,34 @@ textarea.form-control {
     cursor: pointer;
     font-size: 1rem;
     letter-spacing: 0.5px;
-    transition: opacity 0.3s;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: opacity 0.3s, transform 0.2s, background 0.3s;
+    border: 1px solid var(--champagne);
 }
 
-.btn-submit:hover {
-    opacity: 0.9;
+.btn-action:hover {
+    opacity: 0.92;
+    transform: translateY(-2px);
+}
+
+.btn-wa {
+    background-color: var(--champagne);
+    color: var(--burgundy-deep);
+    border: none;
+}
+
+.btn-tiktok {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--cream);
+}
+
+.btn-ig {
+    background-color: rgba(131, 58, 180, 0.35);
+    color: var(--cream);
 }
 
 /* Summary Result Card */
@@ -540,6 +578,32 @@ textarea.form-control {
     font-size: 0.8rem !important;
     color: var(--champagne);
     font-style: italic;
+}
+
+/* Floating WhatsApp Button */
+.wa-float {
+    position: fixed;
+    bottom: 85px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--burgundy-deep);
+    color: var(--champagne);
+    border: 2px solid var(--champagne);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: background 0.3s, transform 0.3s;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.wa-float:hover {
+    background-color: var(--burgundy-rich);
+    transform: scale(1.08);
 }
 
 /* Floating Back to Top Button */
@@ -610,4 +674,4 @@ footer p {
     .menu-toggle {
         display: block;
     }
-}
+                     }
